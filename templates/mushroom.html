@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mushroom Information Form</title>
+</head>
+<body>
+    <h2>Enter Mushroom Details</h2>
+    <form action="{{ url_for('predict_class')}}" method="POST">
+        <label for="cap_diameter">Enter Cap Diameter (float):</label>
+        <input type="number" step="0.01" name="cap_diameter" id="cap_diameter" required><br><br>
+        
+        <label for="cap_shape">Select Cap Shape (str):</label>
+        <select name="cap_shape" id="cap_shape" required>
+            <option value="x">x</option>
+            <option value="f">f</option>
+            <option value="p">p</option>
+            <option value="b">b</option>
+            <option value="c">c</option>
+            <option value="s">s</option>
+            <option value="o">o</option>
+        </select><br><br>
+
+        <label for="cap_surface">Select Cap Surface (str):</label>
+        <select name="cap_surface" id="cap_surface" required>
+            <option value="g">g</option>
+            <option value="h">h</option>
+            <option value="t">t</option>
+            <option value="y">y</option>
+            <option value="e">e</option>
+            <option value="s">s</option>
+            <option value="l">l</option>
+            <option value="d">d</option>
+            <option value="w">w</option>
+            <option value="i">i</option>
+            <option value="k">k</option>
+        </select><br><br>
+
+        <label for="cap_color">Select Cap Color (str):</label>
+        <select name="cap_color" id="cap_color" required>
+            <option value="o">o</option>
+            <option value="e">e</option>
+            <option value="n">n</option>
+            <option value="g">g</option>
+            <option value="r">r</option>
+            <option value="w">w</option>
+            <option value="y">y</option>
+            <option value="p">p</option>
+            <option value="u">u</option>
+            <option value="b">b</option>
+            <option value="l">l</option>
+            <option value="k">k</option>
+        </select><br><br>
+
+        <label for="does_bruise_or_bleed">Does it bruise or bleed (str):</label>
+        <select name="does_bruise_or_bleed" id="bruised" required>
+            <option value="f">f</option>
+            <option value="t">t</option>
+        </select><br><br>
+
+        <label for="gill_attachment">Select Gill Attachment (str):</label>
+        <select name="gill_attachment" id="gill_attachment" required>
+            <option value="e">e</option>
+            <option value="a">a</option>
+            <option value="d">d</option>
+            <option value="s">s</option>
+            <option value="x">x</option>
+            <option value="p">p</option>
+            <option value="f">f</option>
+        </select><br><br>
+
+        <label for="gill_color">Select Gill Color (str):</label>
+        <select name="gill_color" id="gill_color" required>
+            <option value="w">w</option>
+            <option value="n">n</option>
+            <option value="p">p</option>
+            <option value="u">u</option>
+            <option value="b">b</option>
+            <option value="g">g</option>
+            <option value="y">y</option>
+            <option value="r">r</option>
+            <option value="e">e</option>
+            <option value="o">o</option>
+            <option value="k">k</option>
+            <option value="f">f</option>
+        </select><br><br>
+
+        <label for="stem_height">Enter Stem Height (float):</label>
+        <input type="number" step="0.01" name="stem_height" id="stem_height" required><br><br>
+
+        <label for="stem_width">Enter Stem Width (float):</label>
+        <input type="number" step="0.01" name="stem_width" id="stem_width" required><br><br>
+
+        <label for="stem_color">Select Stem Color (str):</label>
+        <select name="stem_color" id="stem_color" required>
+            <option value="w">w</option>
+            <option value="y">y</option>
+            <option value="n">n</option>
+            <option value="u">u</option>
+            <option value="b">b</option>
+            <option value="l">l</option>
+            <option value="r">r</option>
+            <option value="p">p</option>
+            <option value="e">e</option>
+            <option value="k">k</option>
+            <option value="g">g</option>
+            <option value="o">o</option>
+            <option value="f">f</option>
+        </select><br><br>
+
+        <label for="has_ring">Does it have a ring? (str):</label>
+        <select name="has_ring" id="has_ring" required>
+            <option value="t">t</option>
+            <option value="f">f</option>
+        </select><br><br>
+
+        <label for="ring_type">Select Ring Type (str):</label>
+        <select name="ring_type" id="ring_type" required>
+            <option value="g">g</option>
+            <option value="p">p</option>
+            <option value="e">e</option>
+            <option value="l">l</option>
+            <option value="f">f</option>
+            <option value="m">m</option>
+            <option value="r">r</option>
+            <option value="z">z</option>
+        </select><br><br>
+
+        <label for="habitat">Select Habitat (str):</label>
+        <select name="habitat" id="habitat" required>
+            <option value="d">d</option>
+            <option value="m">m</option>
+            <option value="g">g</option>
+            <option value="h">h</option>
+            <option value="l">l</option>
+            <option value="p">p</option>
+            <option value="w">w</option>
+            <option value="u">u</option>
+        </select><br><br>
+
+        <label for="season">Select Season (str):</label>
+        <select name="season" id="season" required>
+            <option value="w">w</option>
+            <option value="u">u</option>
+            <option value="a">a</option>
+            <option value="s">s</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    <h2>
+        THE  prediction is {{results}}
+    </h2>
+ 
+</body>
+</html>
