@@ -9,12 +9,14 @@ class PredictPipeline:
         pass
     def predict(self,features):
         try:
-            model_path="artifacts\best_model.pkl"
+            model_path=r"artifacts\best_model.pkl"
             preprocessor_path="artifacts\preprocessor.pkl"
             model=load_object(model_path)
             preprocessor=load_object(preprocessor_path)
             data_processed=preprocessor.transform(features)
+            logging.info("Data processed")
             preds=model.predict(data_processed)
+            logging.info("Prediction done")
 
             return preds
         except Exception as e:

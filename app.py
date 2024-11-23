@@ -5,6 +5,8 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
 from src.pipeline.predict_pipeline import CustomData,PredictPipeline
+from src.exception import CustomException
+from src.logger import logging
 
 application=Flask(__name__)
 app=application
@@ -31,6 +33,7 @@ def predict_class():
         print(pred_df)
 
         pred_pipe=PredictPipeline()
+        logging.info("prediction started")
         prediction=pred_pipe.predict(pred_df)
         if prediction[0]==1:
             results="Poisonous mushroom"
